@@ -19,11 +19,13 @@ args = parser.parse_args()
 
 
 def calc_prob(ppl_num):
-    # Calc the probability of that ppl have no duplication of birthdays.
+    """
+    Calc the probability of that ppl have no duplication of birthdays.
+    """
     prob_no_dup = 1
     if ppl_num > 1:
         for i in range(1, ppl_num):
-            prob_no_dup *= (365. - i) / 365.
+            prob_no_dup *= (365. - i if i <= 365 else 0) / 365.
     return 1. - prob_no_dup
 
 if args.n:
