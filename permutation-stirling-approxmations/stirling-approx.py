@@ -1,7 +1,10 @@
 """
-How many people do we need to have in a room to make it a favorable bet
-(probability of success greater than 1/2) that two people in the room
-will have the same birthday?
+In mathematics, Stirling's approximation (or Stirling's formula) is an
+approximation for factorials. It is a very powerful approximation, leading to
+accurate results even for small values of n. It is named after James
+Stirling, though it was first stated by Abraham de Moivre.
+
+n!\sim {\sqrt {2\pi n}}\left({\frac {n}{e}}\right)^{n}.
 """
 
 import os
@@ -22,6 +25,8 @@ args = parser.parse_args()
 # Load the memo (dynamic programming)
 memo_path = os.path.abspath("./memo.npy")
 memo = np.load(memo_path).item() if os.path.isfile(memo_path) else {0: 1, 1: 1}
+
+
 # print("loaded memo=%s" % memo)
 
 
